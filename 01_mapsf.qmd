@@ -1,0 +1,71 @@
+# Le package mapsf
+
+## Présentation
+
+<img src="img/logo.png" align="right" alt="" width="120" />
+
+
+L’écosystème spatial du logiciel libre R est riche, dynamique et mature et plusieurs packages permettent d’importer, de traiter et de représenter les données spatiales. Le package [`mapsf`](https://CRAN.R-project.org/package=mapsf) [@R-mapsf] s’appuie sur cet écosystème pour intégrer la création de cartes thématiques de qualité dans les chaînes de traitements avec R.
+
+![Une chaîne de traitements typique](img/workflow.png)
+
+
+
+
+:::{.callout-note}
+D'autres packages peuvent être utilisés pour réaliser des cartes thématiques.  
+Le package `ggplot2` [@R-ggplot2], en association avec le package `ggspatial` [@R-ggspatial], permet par exemple d'afficher des objets spatiaux et de réaliser des cartes thématiques simples.   
+Le package `tmap` [@R-tmap] est dédié à la création de cartes thématiques, il utilise une syntaxe proche de celle de `ggplot2` (enchaînement d'instructions combinées avec le signe `+`).   
+La documentation et les tutoriels pour utiliser ces deux packages sont facilement accessibles sur le web.
+:::
+
+Dans ce document, nous utiliserons principalement le package `mapsf` dont les fonctionnalités sont assez complètes et la prise en main plutôt simple. De plus, le package est relativement léger.
+
+![Un nombre minimal de dépendances bien connues](img/deps.png)
+
+
+`mapsf` permet de créer la plupart des types de carte utilisés habituellement en cartographie statistique (cartes choroplèthes, typologies, symboles proportionnels ou gradués…).  
+Pour chaque type de carte, plusieurs paramètres permettent de personnaliser la représentation cartographique. Ces paramètres sont les mêmes que ceux que l’on retrouve dans les logiciels de SIG ou de cartographie usuels (par exemple, le choix des discrétisations et des palettes de couleurs, la modification de de la taille des symboles ou la personnalisation des légendes).  
+Associées aux fonctions de représentation des données d’autres fonctions sont dédiées à l’habillage cartographique (thèmes ou chartes graphiques, légendes, échelles, flèches d’orientation, titre, crédits, annotations...), à la création de cartons ou à l’export des cartes.  
+`mapsf` est le successeur de [`cartography`](http://riatelab.github.io/cartography/docs/) [@R-cartography], il offre les mêmes fonctionnalités principales tout en étant plus léger et plus ergonomique.
+
+
+## Documentation
+
+
+::: {layout-ncol=2}
+
+[Site web](https://riatelab.github.io/mapsf/) : 
+![](img/webmapsf.png)
+
+
+[*cheat sheet*](https://raw.githubusercontent.com/riatelab/mapsf/master/vignettes/web_only/img/mapsf_cheatsheet.pdf) : 
+![](img/mapsf_cheatsheet.png)
+
+:::
+
+
+**Vignettes** : 
+
+- [Get started](https://riatelab.github.io/mapsf/#/vignettes/mapsf)
+- [How to create faceted maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_create_faceted_maps)
+- [How to create inset maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_create_inset_maps)
+- [How to export maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_export_maps)
+- [How to use a custom font family](hhttps://riatelab.github.io/mapsf/#/vignettes/how_to_use_a_custom_font_family)
+- [How to use themes](https://riatelab.github.io/mapsf/#/vignettes/how_to_use_themes)
+
+## Exercice {.unnumbered}
+
+1. Les données utilisées dans ce document sont stockées dans un projet RStudio. 
+Vous devez le télécharger puis le décompresser sur votre machine. Il vous sera ensuite possible de tester l'ensemble des manipulations proposées dans ce document au sein du projet **geodata**.  
+[Télécharger le projet](https://rcarto.github.io/cartographie_avec_r/geodata.zip){.btn .btn-primary .btn-sm role="button"}  
+
+2. Nous utiliserons principalement le package `mapsf` dans la suite de ce document.   
+Installez le en utilisant la fonction `install.packages()`.
+
+3. Quelle est la version du package?
+
+4. Quelles sont les nouveautés par rapport à la version précédente?
+
+
+

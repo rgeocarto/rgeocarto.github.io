@@ -1,0 +1,49 @@
+# La sémiologie graphique
+
+## Principes généraux
+
+> La **sémiologie graphique** est, de façon générale, l'ensemble des règles qui régissent la construction d'un système de signes ou langage permettant la traduction graphique d'une information. Depuis la parution de la Sémiologie graphique de Jacques @bertin1967, elle désigne surtout **un ensemble standardisé des règles et de pratiques inhérentes à la représentation cartographique** au-delà des travaux réalisés par Bertin.   
+<small>[Wikipedia : Sémiologie graphique](https://fr.wikipedia.org/wiki/S%C3%A9miologie_graphique)</small>
+
+
+Pour une première approche de la cartographie thématique on peut se référer à la figure suivante qui résume de manière simplifiée la relation entre un type de variable et sa représentation graphique correcte. 
+
+![](img/arbre_type_data.png)
+
+
+:::{.callout-note}
+Pourquoi on ne représente [pas de stocks en aplat !](https://neocarto.hypotheses.org/5717)
+:::
+
+
+
+## Ressources
+
+Voici quelques ouvrages et ressources pour l'apprentissage de la cartographie thématique : 
+
+
+::: {layout="[[1,1,1,1], [1,1,1,1]]"}
+
+![@beguin2010](img/c1.png)
+
+
+![@lambert2016](img/c2.png)
+
+
+![@ctm](img/c3.png)  
+
+:::
+
+
+
+## Exercice {.unnumbered}
+
+Comment représenter les variables suivantes :
+
+  * Une population communale
+  * Un age médian par département
+  * Un taux de croissance
+  * Le statut administratif d'une commune (préfecture, sous-préfecture, commune simple…)
+  * L'espérance de vie par pays
+
+
