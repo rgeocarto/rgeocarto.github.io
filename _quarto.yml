@@ -42,12 +42,12 @@ book:
   date-format: "D MMM YYYY"
   doi: 10.5281/zenodo.5906212
   search: true
-  repo-url: https://github.com/rcarto/geomatique_avec_r/
+  repo-url: https://github.com/rgeocarto/rgeocarto.github.io/
   cover-image: img/layer-group-solid.svg
   sidebar: 
     footer: "</br>[![](img/cc-icon.svg){height=42px}](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)" 
   favicon: img/layer-group-solid.svg
-  site-url: https://rcarto.github.io/rcarto/geomatique_avec_r/
+  site-url:  https://rgeocarto.github.io/
   open-graph: true
   chapters:
     - index.qmd

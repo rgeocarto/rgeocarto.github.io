@@ -1,29 +1,32 @@
-# [Cartographie avec R](https://rcarto.github.io/cartographie_avec_r/) <img src="img/globe-africa-solid.svg" align="right" width="120"/>
+# [Géomatique et cartographie avec R]( https://rgeocarto.github.io/) <img src="img/layer-group-solid.svg" align="right" width="120"/>
 
+Le logiciel R permet depuis longtemps de traiter les données spatiales, 
+plusieurs packages forment un socle permettant la mise en œuvre de ces traitements.
+Les développements actuels s'appuient sur ce socle et forment un écosystème robuste 
+qui offre aux utilisateurs la plupart des fonctionnalités autrefois réservées 
+aux Systèmes d'Information Géographique, et cela dans un environnement favorable 
+à la reproductibilité des résultats de recherche.
 
-L'objectif de ce document est de fournir un support à l'apprentissage de la cartographie thématique avec R. 
+Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des 
+traitements de données spatiales qu'aux utilisateurs souhaitant utiliser R 
+pour réaliser les taches qu'ils réalisent habituellement avec un SIG.
 
 
 **Contribution et feedback**  
-Vous pouvez nous envoyer vos remarques et suggestions en [postant une *issue*](https://github.com/rCarto/cartographie_avec_r/issues) sur le [dépôt GitHub](https://github.com/rCarto/cartographie_avec_r) de ce document. 
-
-
-**Contexte**  
-Ce manuel a été initialement conçu pour accompagner le cours "Cartographie avec R" 
-du Master 2 Géomatique, géodécisionnel, géomarketing et multimédia (G2M) de 
-l'Université Paris 8 Vincennes - Saint-Denis. 
-Un deuxième manuel centré sur la géomatique est disponible ici :
-[Géomatique avec R](https://rcarto.github.io/geomatique_avec_r/).
+Vous pouvez nous envoyer vos remarques et suggestions en 
+[postant une *issue*](https://github.com/rgeocarto/rgeocarto.github.io/issues) 
+sur le [dépôt GitHub](https://github.com/rgeocarto/rgeocarto.github.io/) de ce document. 
 
 
 
 
 ![](img/by-nc-sa.png)  
-La version en ligne de ce document est sous licence [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/). 
+La version en ligne de ce document est sous licence 
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/). 
 
 
 --------
 
 **Pour citer le document :**  
 
-Giraud, T. et Pecout, H. (2023). Géomatique avec R. https://doi.org/10.5281/zenodo.5905734
+Giraud, T. et Pecout, H. (2025). Géomatique et cartographie avec R.

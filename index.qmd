@@ -1,20 +1,29 @@
 # *Préambule* {.unnumbered}
 
 
-Le logiciel R permet depuis longtemps de traiter les données spatiales, plusieurs packages forment un socle permettant la mise en œuvre de ces traitements.   
-Les développements actuels s'appuient sur ce socle et forment un écosystème robuste qui offre aux utilisateurs la plupart des fonctionnalités autrefois réservées aux Systèmes d'Information Géographique, et cela dans un environnement favorable à la reproductibilité des résultats de recherche.  
+Le logiciel R permet depuis longtemps de traiter les données spatiales, 
+plusieurs packages forment un socle permettant la mise en œuvre de ces traitements.
+Les développements actuels s'appuient sur ce socle et forment un écosystème robuste 
+qui offre aux utilisateurs la plupart des fonctionnalités autrefois réservées 
+aux Systèmes d'Information Géographique, et cela dans un environnement favorable 
+à la reproductibilité des résultats de recherche.
 
-Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu'aux utilisateurs souhaitant utiliser R pour réaliser les taches qu'ils réalisent habituellement avec un SIG.    
+Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des 
+traitements de données spatiales qu'aux utilisateurs souhaitant utiliser R 
+pour réaliser les taches qu'ils réalisent habituellement avec un SIG. 
 
 
 **Comment utiliser le manuel**  
 Les données utilisées dans ce document sont stockées dans un projet RStudio. 
 Vous devez le télécharger puis le décompresser sur votre machine. Il vous sera ensuite possible de tester l'ensemble des manipulations proposées dans ce document au sein du projet **geodata**.  
-[Télécharger le projet](https://rcarto.github.io/geomatique_avec_r/geodata.zip){.btn .btn-primary .btn-sm role="button"}  
+[Télécharger le projet](https://github.com/rgeocarto/rgeocarto.github.io/geodata.zip){.btn .btn-primary .btn-sm role="button"}  
 
 
 **Contribution et feedback**  
-Vous pouvez nous envoyer vos remarques et suggestions en [postant une *issue*](https://github.com/rCarto/geomatique_avec_r/issues) sur le [dépôt GitHub](https://github.com/rCarto/geomatique_avec_r) de ce document. 
+Vous pouvez nous envoyer vos remarques et suggestions en 
+[postant une *issue*](https://github.com/rgeocarto/rgeocarto.github.io/issues) 
+sur le [dépôt GitHub](https://github.com/rgeocarto/rgeocarto.github.io/) de ce document. 
+
 
 <!-- **Contexte**   -->
 <!-- Ce manuel a été initialement conçu pour accompagner le cours "Cartographie avec R"  -->
@@ -42,7 +51,7 @@ Vous pouvez nous envoyer vos remarques et suggestions en [postant une *issue*](h
 <small>
 **Pour citer le document :**  
 
-Giraud, T. et Pecout, H. (2025). Géomatique et cartographie avec R. https://doi.org/10.5281/zenodo.5906212
+Giraud, T. et Pecout, H. (2025). Géomatique et cartographie avec R.
 
 </small>
 
