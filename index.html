@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Timothée Giraud et Hugues Pecout">
-<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
+<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
 
 <title>Géomatique et cartographie avec R</title>
 <style>
@@ -65,8 +65,6 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-4b0b6a96e4961716c4ecb84507302723.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -421,7 +419,7 @@ div.csl-indent {
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
             <a href="https://riate.cnrs.fr">
-            RIATE (CNRS)
+            Centre pour l’analyse spatiale et la géovisualisation - RIATE (CNRS)
             </a>
           </p>
       </div>
@@ -443,7 +441,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">6 nov. 2025</p>
+      <p class="date">17 déc. 2025</p>
     </div>
   </div>
   
@@ -459,20 +457,13 @@ div.csl-indent {
 <section id="préambule" class="level1 unnumbered">
 <h1 class="unnumbered"><em>Préambule</em></h1><p><img src="img/layer-group-solid.svg" title="Géomatique et cartographie avec R" class="quarto-cover-image nolightbox img-fluid"></p>
 <p>Le logiciel R permet depuis longtemps de traiter les données spatiales, plusieurs packages forment un socle permettant la mise en œuvre de ces traitements. Les développements actuels s’appuient sur ce socle et forment un écosystème robuste qui offre aux utilisateurs la plupart des fonctionnalités autrefois réservées aux Systèmes d’Information Géographique, et cela dans un environnement favorable à la reproductibilité des résultats de recherche.</p>
-<p>Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG.</p>
+<p>Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG.</p>
 <p><strong>Comment utiliser le manuel</strong><br>
 Les données utilisées dans ce document sont stockées dans un projet RStudio. Vous devez le télécharger puis le décompresser sur votre machine. Il vous sera ensuite possible de tester l’ensemble des manipulations proposées dans ce document au sein du projet <strong>geodata</strong>.<br>
-<a href="https://github.com/rgeocarto/rgeocarto.github.io/geodata.zip" class="btn btn-primary btn-sm" role="button">Télécharger le projet</a></p>
+<a href="https://github.com/rgeocarto/geodata/releases/download/v1.0.0/geodata.zip" class="btn btn-primary btn-sm" role="button">Télécharger le projet</a></p>
 <p><strong>Contribution et feedback</strong><br>
 Vous pouvez nous envoyer vos remarques et suggestions en <a href="https://github.com/rgeocarto/rgeocarto.github.io/issues">postant une <em>issue</em></a> sur le <a href="https://github.com/rgeocarto/rgeocarto.github.io/">dépôt GitHub</a> de ce document.</p>
-<!-- **Contexte**   -->
-<!-- Ce manuel a été initialement conçu pour accompagner le cours "Cartographie avec R"  -->
-<!-- du Master 2 Géomatique, géodécisionnel, géomarketing et multimédia (G2M) de  -->
-<!-- l'Université Paris 8 Vincennes - Saint-Denis. Une version PDF est disponible  -->
-<!-- ici : [](https://rcarto.github.io/geomatique_avec_r/Géomatique-avec-R.pdf).     -->
-<!-- Un deuxième manuel centré sur la cartographie est disponible ici : -->
-<!-- [Cartographie avec R](https://rcarto.github.io/cartographie_avec_r/). -->
-<p><strong>Voir aussi en anglais : </strong></p>
+<p><strong>Voir aussi : </strong></p>
 <div class="quarto-layout-panel" data-layout="[[1,1,1,1,1], [0,1,1,1,0]]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
@@ -499,6 +490,14 @@ Vous pouvez nous envoyer vos remarques et suggestions en <a href="https://github
 </figure>
 </div>
 </div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://briques-de-geomatique.readthedocs.io"><img src="img/brique.png" class="img-fluid figure-img"></a></p>
+<figcaption>Briques de Géomatique - <span class="citation" data-cites="passy">Passy (<a href="2000_references.html#ref-passy" role="doc-biblioref">2025</a>)</span></figcaption>
+</figure>
+</div>
+</div>
 </div>
 </div>
 <p><small> <strong>Pour citer le document :</strong></small></p><small>
@@ -514,6 +513,9 @@ Hijmans, R. J. (2025). <em><span>Spatial Data Science with R and "terra"</span><
 </div>
 <div id="ref-lovelace2019" class="csl-entry" role="listitem">
 Lovelace, R., Nowosad, J. et Muenchow, J. (2025). <em>Geocomputation with <span>R</span></em>. CRC Press. <a href="https://r.geocompx.org/">https://r.geocompx.org/</a>
+</div>
+<div id="ref-passy" class="csl-entry" role="listitem">
+Passy, P. (2025). Bienvenue sur les Briques de Géomatique ! <a href="https://briques-de-geomatique.readthedocs.io/fr/latest/index.html">https://briques-de-geomatique.readthedocs.io/fr/latest/index.html</a>
 </div>
 <div id="ref-pebesma2023" class="csl-entry" role="listitem">
 Pebesma, E. et Bivand, R. (2023). <em>Spatial Data Science: With Applications in <span>R</span></em>. Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9780429459016">https://doi.org/10.1201/9780429459016</a>

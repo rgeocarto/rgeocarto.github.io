@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Timothée Giraud et Hugues Pecout">
-<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
+<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
 
 <title>Géomatique et cartographie avec R</title>
 <style>
@@ -524,7 +524,7 @@ Les rendus sont meilleurs si les données en entrée utilisent le même système
 <li>les bâtiments</li>
 <li>les espaces verts</li>
 <li>les routes principales</li>
-<li>les outes secondaires</li>
+<li>les routes secondaires</li>
 <li>les voies ferrées</li>
 <li>les étendues d’eau</li>
 </ul>
@@ -544,15 +544,17 @@ Les rendus sont meilleurs si les données en entrée utilisent le même système
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>cahors <span class="ot">&lt;-</span> <span class="fu">om_get</span>(<span class="at">x =</span> coords, <span class="at">r =</span> <span class="dv">2000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Getting urban areas: 7.798 sec elapsed
-#&gt; Getting buildings: 10.657 sec elapsed
-#&gt; Getting green areas: 4.501 sec elapsed
-#&gt; Getting roads: 8.23 sec elapsed
-#&gt; Getting streets: 13.438 sec elapsed
-#&gt; Getting railways: 6.725 sec elapsed
-#&gt; Getting water bodies: 4.072 sec elapsed</code></pre>
+<pre><code>#&gt; Getting urban areas: 0.546 sec elapsed
+#&gt; Getting buildings: 9.649 sec elapsed
+#&gt; Getting green areas: 0.887 sec elapsed
+#&gt; Getting roads: 0.409 sec elapsed
+#&gt; Getting streets: 17.369 sec elapsed
+#&gt; Getting railways: 8.222 sec elapsed</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">om_map</span>(<span class="at">x =</span> cahors, <span class="at">title =</span> <span class="st">"Cahors"</span>, <span class="at">theme =</span> <span class="st">"light"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Getting water bodies: 23.561 sec elapsed</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">om_map</span>(<span class="at">x =</span> cahors, <span class="at">title =</span> <span class="st">"Cahors"</span>, <span class="at">theme =</span> <span class="st">"light"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

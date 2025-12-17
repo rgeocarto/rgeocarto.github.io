@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Timothée Giraud et Hugues Pecout">
-<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
+<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
 
 <title>Géomatique et cartographie avec R</title>
 <style>
@@ -838,7 +838,7 @@ window.Quarto = {
 </section>
 <section id="opération-zonale-à-partir-dun-raster" class="level3" data-number="13.4.2">
 <h3 data-number="13.4.2" class="anchored" data-anchor-id="opération-zonale-à-partir-dun-raster"><span class="header-section-number">13.4.2</span> Opération zonale à partir d’un raster</h3>
-<p>Les opérations zonales peuvent être réalisées par zone délimitée par les valeurs catégorielles d’un second raster avec la fonction <code>zonal()</code>. <strong>Pour cela, les deux rasters doivent avoir exactement le même étendue et la même résolution</strong>.</p>
+<p>Les opérations zonales peuvent être réalisées par zone délimitée par les valeurs catégorielles d’un second raster avec la fonction <code>zonal()</code>. <strong>Pour cela, les deux rasters doivent avoir exactement la même étendue et la même résolution</strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Élévation moyenne pour chaque zone de clc</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">zonal</span>(elev, clc_5, <span class="st">"mean"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>

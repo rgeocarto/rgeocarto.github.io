@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Timothée Giraud et Hugues Pecout">
-<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
+<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
 
 <title>Géomatique et cartographie avec R</title>
 <style>
@@ -526,8 +526,7 @@ div.csl-indent {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>tapply(X, INDEX, FUN)</code> permet d’aggréger une variable en fonction d’une autre.<br>
-Il faut indiquer la variable à agréger <strong>X</strong>, la variable servant à agréger <strong>INDEX</strong> et la manière d’agréger (la fonction d’agrégation) <strong>FUN</strong>.</p>
+<p><code>tapply(X, INDEX, FUN)</code> permet d’agréger une variable en fonction d’une autre. Il faut indiquer la variable à agréger <strong>X</strong>, la variable servant à agréger <strong>INDEX</strong> et la manière d’agréger (la fonction d’agrégation) <strong>FUN</strong>.</p>
 <p>Ici par exemple nous calculons la somme des population des communes en fonction de leur statut :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(<span class="at">X =</span> com<span class="sc">$</span>POPULATION, <span class="at">INDEX =</span> com<span class="sc">$</span>STATUT, <span class="at">FUN =</span> sum)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
@@ -651,7 +650,7 @@ Il faut indiquer la variable à agréger <strong>X</strong>, la variable servant
 <h2 data-number="7.5" class="anchored" data-anchor-id="réaliser-une-intersection"><span class="header-section-number">7.5</span> Réaliser une intersection</h2>
 <p>En utilisant la fonction <code>st_intersection()</code>, on peut découper une couche par une autre.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># création d'une zone tampon autour du centroide de la commune de Gramat</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># création d'une zone tampon autour du centroïde de la commune de Gramat</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>zone <span class="ot">&lt;-</span> <span class="fu">st_geometry</span>(gramat) <span class="sc">|&gt;</span> </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_centroid</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="dv">10000</span>)</span>

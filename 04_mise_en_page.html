@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Timothée Giraud et Hugues Pecout">
-<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les taches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
+<meta name="description" content="Géomatique et cartographie avec R: pour la réalisation de traitements reproductibles de l’information géographique. Ce manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu’aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu’ils réalisent habituellement avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées.">
 
 <title>Géomatique et cartographie avec R</title>
 <style>
@@ -517,7 +517,7 @@ div.csl-indent {
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_theme</span>(<span class="st">"sol_dark"</span>)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(com)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"Theme : 'sol_dark'"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="figs/them1-1.png" class="img-fluid" width="336"></p>
@@ -565,7 +565,7 @@ div.csl-indent {
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(com, <span class="st">"DENS"</span>, <span class="st">"choro"</span>, <span class="at">breaks =</span> <span class="st">"ckmeans"</span>, <span class="at">nbreaks =</span> <span class="dv">4</span>)</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"Theme : 'sol_light' modifié"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="figs/theme2-1.png" class="img-fluid" width="384"></p>
@@ -1083,8 +1083,8 @@ Par exemple <code>par(mfrow = c(1, 2))</code> (1 ligne et 2 colonnes) permet d�
 <section id="exercice" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice">Exercice</h2>
 <ol type="1">
-<li><p>Importer la couche des communes du département du Lot à partir du fichier geopackage <strong>lot.gpkg</strong>.</p></li>
-<li><p>Importer le fichier <strong>com.csv</strong>.<br>
+<li><p>Importez la couche des communes du département du Lot à partir du fichier geopackage <strong>lot.gpkg</strong>.</p></li>
+<li><p>Importez le fichier <strong>com.csv</strong>.<br>
 Ce jeu de données porte sur les communes du lot et contient plusieurs variables supplémentaires:</p>
 <ul>
 <li>le nombre d’actifs (<strong>ACT</strong>).</li>
@@ -1092,7 +1092,7 @@ Ce jeu de données porte sur les communes du lot et contient plusieurs variables
 <li>La part des actifs dans la population totale (<strong>SACT</strong>)</li>
 <li>La part des actifs dans l’industrie dans le total des actifs (<strong>SACT_IND</strong>)</li>
 </ul></li>
-<li><p>Joindre le jeu de données et la couche des communes.</p></li>
+<li><p>Joignez le jeu de données et la couche des communes.</p></li>
 <li><p>Créez une carte représentant la population active travaillant dans l’industrie.</p></li>
 <li><p>Ajoutez les éléments d’habillage indispensables.</p></li>
 <li><p>Utilisez un thème personnalisé.</p></li>
@@ -1100,16 +1100,6 @@ Ce jeu de données porte sur les communes du lot et contient plusieurs variables
 <li><p>Exportez la carte au format PNG avec 800 pixels de large.</p></li>
 <li><p>Comment rendre la carte plus intelligible ? Allez-y !</p></li>
 </ol>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Vous pouvez utiliser le fichier <strong>exo_cartographie_mise_en_page.R</strong> pour vous guider dans cette exercice.</p>
-</div>
-</div>
-</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">

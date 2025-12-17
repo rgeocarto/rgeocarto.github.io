@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rgeocarto.github.io/index.html</loc>
-    <lastmod>2025-10-24T10:53:48.220Z</lastmod>
+    <lastmod>2025-12-17T14:29:25.233Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/01_package_sf.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:29:30.089Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/02_import_sf.html</loc>
@@ -22,15 +22,15 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/05_selection_attrib_sf.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:40:32.751Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/06_selection_jointure_spatiale_sf.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:40:32.799Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/07_operation_geom_sf.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-15T12:59:38.351Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/08_mesures_sf.html</loc>
@@ -50,11 +50,11 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/12_modif_zone_terra.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-15T12:48:58.487Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/13_algebre_spatial_terra.html</loc>
-    <lastmod>2025-11-03T10:40:29.928Z</lastmod>
+    <lastmod>2025-12-15T12:59:38.351Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/14_transformation_terra.html</loc>
@@ -62,19 +62,19 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/01_mapsf.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:29:30.189Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/02_semiologie.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:40:32.855Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/03_types_de_cartes.html</loc>
-    <lastmod>2025-11-03T10:40:29.544Z</lastmod>
+    <lastmod>2025-12-17T14:40:32.911Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/04_mise_en_page.html</loc>
-    <lastmod>2025-11-03T10:40:55.564Z</lastmod>
+    <lastmod>2025-12-17T14:40:32.971Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/15_OSM.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/17_OSM_static.html</loc>
-    <lastmod>2025-11-03T10:41:11.344Z</lastmod>
+    <lastmod>2025-12-15T12:59:38.351Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/18_OSM_data.html</loc>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/19_OSM_routing.html</loc>
-    <lastmod>2025-11-06T11:16:37.708Z</lastmod>
+    <lastmod>2025-12-15T12:59:38.351Z</lastmod>
   </url>
   <url>
     <loc>https://rgeocarto.github.io/1999_georeferencement.html</loc>
@@ -114,6 +114,6 @@
   </url>
   <url>
     <loc>https://rgeocarto.github.io/2002_data.html</loc>
-    <lastmod>2025-10-24T10:53:47.912Z</lastmod>
+    <lastmod>2025-12-17T14:29:30.137Z</lastmod>
   </url>
 </urlset>
