@@ -1,7 +1,11 @@
 project:
   type: book
   output-dir: docs
-
+  resources: 
+    - LICENSE.md
+    - CITATION.cff
+    - codemeta.json
+    
 execute: 
   freeze: auto
 
