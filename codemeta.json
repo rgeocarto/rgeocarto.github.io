@@ -1,0 +1,43 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "author": [
+    {
+      "@id": "https://orcid.org/0000-0001-5679-6536",
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "legalName": "Centre pour l’analyse spatiale et la géovisualisation - RIATE (CNRS)"
+      },
+      "familyName": "Giraud",
+      "givenName": "Timothée"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0246-0954",
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "legalName": "Géographie-cités (CNRS)"
+      },
+      "familyName": "Pecout",
+      "givenName": "Hugues"
+    }
+  ],
+  "codeRepository": "https://github.com/rgeocarto/rgeocarto.github.io",
+  "description": "Le logiciel R permet depuis longtemps de traiter les données spatiales, plusieurs packages forment un socle permettant la mise en œuvre de ces traitements. Les développements actuels s'appuient sur ce socle et forment un écosystème robuste qui offre aux utilisateurs la plupart des fonctionnalités autrefois réservées aux Systèmes d'Information Géographique, et cela dans un environnement favorable à la reproductibilité des résultats de recherche.\nCe manuel est destiné tant aux utilisateurs de R souhaitant mettre en place des traitements de données spatiales qu'aux utilisateurs souhaitant utiliser R pour réaliser les tâches qu'ils réalisent habituellement avec un SIG.",
+  "keywords": [
+    "maps",
+    "cartography",
+    "cartographie thématique",
+    "cartographie",
+    "reproducible research",
+    "geomatics",
+    "géomatique",
+    "rstats",
+    "rspatial",
+    "mapsf"
+  ],
+  "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+  "name": "Géomatique et cartographie avec R",
+  "url": "https://rgeocarto.github.io/"
+}
