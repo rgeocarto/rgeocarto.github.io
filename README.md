@@ -29,4 +29,4 @@ La version en ligne de ce document est sous licence
 
 **Pour citer le document :**  
 
-Giraud, T. et Pecout, H. (2025). Géomatique et cartographie avec R.
+Giraud, T. et Pecout, H. (2025). Géomatique et cartographie avec R. https://doi.org/10.5281/zenodo.17987558

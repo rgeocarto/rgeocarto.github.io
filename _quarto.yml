@@ -42,7 +42,7 @@ book:
           url: https://geographie-cites.cnrs.fr/       
   date: today
   date-format: "D MMM YYYY"
-  # doi: 10.5281/zenodo.5906212
+  doi: 10.5281/zenodo.17987558
   search: true
   repo-url: https://github.com/rgeocarto/rgeocarto.github.io/
   cover-image: img/layer-group-solid.svg
