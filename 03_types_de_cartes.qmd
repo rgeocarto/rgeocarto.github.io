@@ -236,25 +236,124 @@ mf_map(
 mf_title("Distribution de la population dans le Lot (2018)")
 ```
 
+## Cartes de rasters
+
+`mapsf` se concentre sur la création de cartes thématiques basées sur des données vectorielles, les cartes étant principalement générées à partir d'objets `sf`.  
+Cependant, la fonction `mf_raster()` permet trois types de cartes s'appuyant sur des données raster, des objets `terra`. 
+Les cartes raster bénéficient de tous les éléments de mise en page (titre, échelle, flèche nord, graticules...) et peuvent être combinées avec des objets vectoriels.
+
+Les trois types de cartes sont : 
+- les cartes de classes (`type = "classes"`) qui s'appliquent aux données qualitatives (catégories, typologies)
+- les cartes continues (`type = "continuous"`) adaptées aux données quantitatives (MNT ou températures de surface par exemple)
+- les cartes par intervalles (`type = "interval"`) également adaptée aux données quantitatives
+
+
+### Cartes de classes 
+Dans cet exemple nous utilisons les données de CORINE Land Cover (déjà utilisées [ici](11_affichage_terra.html)).
+
+```{r raster_classe1}
+#| fig-width: 6
+#| fig-height: 5
+library(terra)
+clc <- rast("data/clc_2018.tif")
+mf_raster(clc, type = "classes")
+mf_title("CORINE Land Cover - 2018")
+```
+
+On peut aussi [reclassifier](#reclassification) et changer le nom des différentes classess pour un meilleur affichage. 
+```{r raster_classe2}
+#| fig-width: 8
+#| fig-height: 5
+reclassif <- matrix(c(100, 199, 1,
+                      200, 299, 2,
+                      300, 399, 3,
+                      400, 499, 4,
+                      500, 599, 5),
+                    ncol = 3, 
+                    byrow = TRUE)
+clc_5 <- classify(clc, rcl = reclassif)
+levels(clc_5) <- data.frame(
+  ID = c(1, 2, 3, 5),
+  clc = c(
+    "Territoires artificialisés",
+    "Territoires agricoles",
+    "Forêts et milieux semi-naturels",
+    "Surfaces en eau"
+  )
+)
+mf_raster(
+  clc_5,
+  type = "classes",
+  pal = c("#E6004D", "#FFFFA8", "#80FF00", "#00CCF2"),
+  leg_title = "",
+  leg_pos = "bottomleft"
+)
+mf_title("CORINE Land Cover - 2018")
+```
+
+### Cartes continues 
+
+Ici nous allons utiliser les raster des altitudes. 
+
+```{r}
+#| fig-width: 6
+#| fig-height: 5
+elev <- rast("data/elevation.tif") 
+mf_raster(
+  elev, 
+  type = "continuous", 
+  pal = "Rocket", rev = TRUE,
+  leg_val_rnd = 0,
+  leg_pos = "topleft", leg_title = "Altitude (m)"
+)
+mf_title("Altitudes")
+```
+
+### Cartes par intervalles
+Les classes dont calculées en utilisant les méthodes proposées par `mf_get_breaks()`.
+```{r}
+#| fig-width: 6
+#| fig-height: 5
+mf_raster(
+  elev,
+  type = "interval",
+  breaks = "q6", pal = "Turku", rev = TRUE,
+  leg_val_rnd = 0,
+  leg_pos = "topleft", 
+  leg_title = "Altitude (m)"
+)
+mf_title("Altitudes")
+```
+
+
+
+:::{.callout-note}
+Plus d'infos sur les cartes de rasters: 
+[Raster maps with mapsf](https://rcarto.github.io/posts/mapsf_raster_v0.9.0/)
+:::
+
+
+
+
 ## Exercice {.unnumbered}
 
 1. Importez la couche des communes du département du Lot à partir du fichier geopackage **lot.gpkg**.
 
 
 2. Importez le fichier **com.csv**.   
-  Ce jeu de données porte sur les communes du Lot et contient plusieurs variables supplémentaires: 
+    Ce jeu de données porte sur les communes du Lot et contient plusieurs variables supplémentaires: 
     - le nombre d'actifs (**ACT**). 
     - le nombre d'actifs dans l'industrie (**IND**)
     - la part des actifs dans la population totale (**SACT**)
     - la part des actifs dans l'industrie dans le total des actifs (**SACT_IND**) 
-
+  
 
 3. Joignez le jeu de données et la couche des communes. 
 
 
 4. Créez une carte de la population active.  
   Quel mode de représentation utiliser? Quels choix cela implique-t-il?
-
+  
 
 5. Créez une carte de la part de la population active dans la population totale.  
   Quel mode de représentation utiliser? Quels choix cela implique-t-il?
