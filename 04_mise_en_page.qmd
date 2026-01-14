@@ -94,7 +94,7 @@ mf_title("Theme : 'sol_light' modifié")
 
 :::{.callout-note}
 ## Vignette
-[How to Use Themes](https://riatelab.github.io/mapsf/#/vignettes/how_to_use_themes)
+[How to Use Themes](https://riatelab.github.io/mapsf/articles/how_to_use_themes.html)
 :::
 
 
@@ -314,7 +314,7 @@ Notons ici l'utilisation des arguments `inches` et `val_max` avec des valeurs id
 
 :::{.callout-note}
 ## Vignette
-[How to Create Faceted Maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_create_faceted_maps)
+[How to Create Faceted Maps](https://riatelab.github.io/mapsf/articles/how_to_create_faceted_maps.html)
 :::
 
 
@@ -371,7 +371,7 @@ dev.off()
 
 :::{.callout-note}
 ## Vignette
-[How to Export Maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_export_maps)
+[How to Export Maps](https://riatelab.github.io/mapsf/articles/how_to_export_maps.html)
 :::
 
 ## Ajouter une image sur une carte
@@ -481,7 +481,7 @@ mf_title("Le Lot dans le Monde!")
 
 :::{.callout-note}
 ## Vignette
-[How to Create Inset Maps](https://riatelab.github.io/mapsf/#/vignettes/how_to_create_inset_maps)
+[How to Create Inset Maps](https://riatelab.github.io/mapsf/articles/how_to_create_inset_maps.html)
 :::
 
 
