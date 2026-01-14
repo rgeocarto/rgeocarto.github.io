@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-4b0b6a96e4961716c4ecb84507302723.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -140,9 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Géomatique et cartographie avec R</a> 
         <div class="sidebar-tools-main">
@@ -420,6 +418,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#carte-de-typologie" id="toc-carte-de-typologie" class="nav-link" data-scroll-target="#carte-de-typologie"><span class="header-section-number">17.5</span> Carte de typologie</a></li>
   <li><a href="#carte-de-stocks-et-de-ratios" id="toc-carte-de-stocks-et-de-ratios" class="nav-link" data-scroll-target="#carte-de-stocks-et-de-ratios"><span class="header-section-number">17.6</span> Carte de stocks et de ratios</a></li>
   <li><a href="#carte-de-stocks-et-de-catégories" id="toc-carte-de-stocks-et-de-catégories" class="nav-link" data-scroll-target="#carte-de-stocks-et-de-catégories"><span class="header-section-number">17.7</span> Carte de stocks et de catégories</a></li>
+  <li><a href="#cartes-de-rasters" id="toc-cartes-de-rasters" class="nav-link" data-scroll-target="#cartes-de-rasters"><span class="header-section-number">17.8</span> Cartes de rasters</a>
+  <ul class="collapse">
+  <li><a href="#cartes-de-classes" id="toc-cartes-de-classes" class="nav-link" data-scroll-target="#cartes-de-classes"><span class="header-section-number">17.8.1</span> Cartes de classes</a></li>
+  <li><a href="#cartes-continues" id="toc-cartes-continues" class="nav-link" data-scroll-target="#cartes-continues"><span class="header-section-number">17.8.2</span> Cartes continues</a></li>
+  <li><a href="#cartes-par-intervalles" id="toc-cartes-par-intervalles" class="nav-link" data-scroll-target="#cartes-par-intervalles"><span class="header-section-number">17.8.3</span> Cartes par intervalles</a></li>
+  </ul></li>
   <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice">Exercice</a></li>
   </ul>
 </nav>
@@ -725,6 +729,118 @@ La fonction <code>mf_map(..., type = "typo")</code> propose cette représentatio
 </div>
 </div>
 </div>
+</section>
+<section id="cartes-de-rasters" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="cartes-de-rasters"><span class="header-section-number">17.8</span> Cartes de rasters</h2>
+<p><code>mapsf</code> se concentre sur la création de cartes thématiques basées sur des données vectorielles, les cartes étant principalement générées à partir d’objets <code>sf</code>.<br>
+Cependant, la fonction <code>mf_raster()</code> permet trois types de cartes s’appuyant sur des données raster, des objets <code>terra</code>. Les cartes raster bénéficient de tous les éléments de mise en page (titre, échelle, flèche nord, graticules…) et peuvent être combinées avec des objets vectoriels.</p>
+<p>Les trois types de cartes sont : - les cartes de classes (<code>type = "classes"</code>) qui s’appliquent aux données qualitatives (catégories, typologies) - les cartes continues (<code>type = "continuous"</code>) adaptées aux données quantitatives (MNT ou températures de surface par exemple) - les cartes par intervalles (<code>type = "interval"</code>) également adaptée aux données quantitatives</p>
+<section id="cartes-de-classes" class="level3" data-number="17.8.1">
+<h3 data-number="17.8.1" class="anchored" data-anchor-id="cartes-de-classes"><span class="header-section-number">17.8.1</span> Cartes de classes</h3>
+<p>Dans cet exemple nous utilisons les données de CORINE Land Cover (déjà utilisées <a href="11_affichage_terra.html">ici</a>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>clc <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/clc_2018.tif"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_raster</span>(clc, <span class="at">type =</span> <span class="st">"classes"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"CORINE Land Cover - 2018"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figs/raster_classe1-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>On peut aussi <a href="13_algebre_spatial_terra.html#reclassification">reclassifier</a> et changer le nom des différentes classess pour un meilleur affichage.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>reclassif <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">199</span>, <span class="dv">1</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">200</span>, <span class="dv">299</span>, <span class="dv">2</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">300</span>, <span class="dv">399</span>, <span class="dv">3</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">400</span>, <span class="dv">499</span>, <span class="dv">4</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">500</span>, <span class="dv">599</span>, <span class="dv">5</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ncol =</span> <span class="dv">3</span>, </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>clc_5 <span class="ot">&lt;-</span> <span class="fu">classify</span>(clc, <span class="at">rcl =</span> reclassif)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(clc_5) <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">clc =</span> <span class="fu">c</span>(</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Territoires artificialisés"</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Territoires agricoles"</span>,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Forêts et milieux semi-naturels"</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Surfaces en eau"</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_raster</span>(</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  clc_5,</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"classes"</span>,</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">pal =</span> <span class="fu">c</span>(<span class="st">"#E6004D"</span>, <span class="st">"#FFFFA8"</span>, <span class="st">"#80FF00"</span>, <span class="st">"#00CCF2"</span>),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_title =</span> <span class="st">""</span>,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_pos =</span> <span class="st">"bottomleft"</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"CORINE Land Cover - 2018"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figs/raster_classe2-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cartes-continues" class="level3" data-number="17.8.2">
+<h3 data-number="17.8.2" class="anchored" data-anchor-id="cartes-continues"><span class="header-section-number">17.8.2</span> Cartes continues</h3>
+<p>Ici nous allons utiliser les raster des altitudes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>elev <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/elevation.tif"</span>) </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_raster</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  elev, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"continuous"</span>, </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">pal =</span> <span class="st">"Rocket"</span>, <span class="at">rev =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_val_rnd =</span> <span class="dv">0</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_pos =</span> <span class="st">"topleft"</span>, <span class="at">leg_title =</span> <span class="st">"Altitude (m)"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"Altitudes"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figs/raster_cont-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cartes-par-intervalles" class="level3" data-number="17.8.3">
+<h3 data-number="17.8.3" class="anchored" data-anchor-id="cartes-par-intervalles"><span class="header-section-number">17.8.3</span> Cartes par intervalles</h3>
+<p>Les classes dont calculées en utilisant les méthodes proposées par <code>mf_get_breaks()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_raster</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  elev,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"interval"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="st">"q6"</span>, <span class="at">pal =</span> <span class="st">"Turku"</span>, <span class="at">rev =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_val_rnd =</span> <span class="dv">0</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_pos =</span> <span class="st">"topleft"</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">leg_title =</span> <span class="st">"Altitude (m)"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_title</span>(<span class="st">"Altitudes"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figs/raster_inter-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Plus d’infos sur les cartes de rasters: <a href="https://rcarto.github.io/posts/mapsf_raster_v0.9.0/">Raster maps with mapsf</a></p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="exercice" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice">Exercice</h2>

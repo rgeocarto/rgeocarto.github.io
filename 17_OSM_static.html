@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -97,7 +97,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-4b0b6a96e4961716c4ecb84507302723.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -160,9 +160,7 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Géomatique et cartographie avec R</a> 
         <div class="sidebar-tools-main">
@@ -544,17 +542,15 @@ Les rendus sont meilleurs si les données en entrée utilisent le même système
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>cahors <span class="ot">&lt;-</span> <span class="fu">om_get</span>(<span class="at">x =</span> coords, <span class="at">r =</span> <span class="dv">2000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Getting urban areas: 0.546 sec elapsed
-#&gt; Getting buildings: 9.649 sec elapsed
-#&gt; Getting green areas: 0.887 sec elapsed
-#&gt; Getting roads: 0.409 sec elapsed
-#&gt; Getting streets: 17.369 sec elapsed
-#&gt; Getting railways: 8.222 sec elapsed</code></pre>
+<pre><code>#&gt; Getting urban areas: 1.185 sec elapsed
+#&gt; Getting buildings: 5.011 sec elapsed
+#&gt; Getting green areas: 2.083 sec elapsed
+#&gt; Getting roads: 0.937 sec elapsed
+#&gt; Getting streets: 1.849 sec elapsed
+#&gt; Getting railways: 0.602 sec elapsed
+#&gt; Getting water bodies: 3.048 sec elapsed</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Getting water bodies: 23.561 sec elapsed</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">om_map</span>(<span class="at">x =</span> cahors, <span class="at">title =</span> <span class="st">"Cahors"</span>, <span class="at">theme =</span> <span class="st">"light"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">om_map</span>(<span class="at">x =</span> cahors, <span class="at">title =</span> <span class="st">"Cahors"</span>, <span class="at">theme =</span> <span class="st">"light"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
