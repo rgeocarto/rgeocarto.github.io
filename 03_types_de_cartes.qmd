@@ -1,7 +1,7 @@
 # Les types de cartes  
 
 La fonction `mf_map()` est la fonction centrale du package `mapsf`. Elle permet de réaliser la plupart des représentations usuelles en cartographie.
-Ces arguments principaux sont :
+Ses arguments principaux sont :
 
 - `x`, un objet sf ;
 - `var`, le nom de la variable à représenter ;
@@ -295,7 +295,7 @@ mf_title("CORINE Land Cover - 2018")
 
 Ici nous allons utiliser les raster des altitudes. 
 
-```{r}
+```{r raster_cont}
 #| fig-width: 6
 #| fig-height: 5
 elev <- rast("data/elevation.tif") 
@@ -311,7 +311,7 @@ mf_title("Altitudes")
 
 ### Cartes par intervalles
 Les classes dont calculées en utilisant les méthodes proposées par `mf_get_breaks()`.
-```{r}
+```{r raster_inter}
 #| fig-width: 6
 #| fig-height: 5
 mf_raster(

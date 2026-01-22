@@ -6,7 +6,7 @@ cache: false
 
 ## Projections {#sec-proj}
 
-Pour modifier le système de projection d'un raster, nous pouvons utiliser la fonction `project()`. Il est alors nécessaire de **fournir un modèle** et d'indiquer la **méthode d'estimation** des nouvelles valeurs des cellules.
+Pour modifier le système de coordonnées d'un raster, nous pouvons utiliser la fonction `project()`. Il est alors nécessaire de **fournir un modèle** et d'indiquer la **méthode d'estimation** des nouvelles valeurs des cellules.
 
 Le modèle est un nouveau raster sur lequel aligner/projeter les données. 
 Pour construire un modèle, nous utilisons dans un premier temps la fonction `project(x, crs)`.
@@ -69,7 +69,7 @@ cahors <- subset(commune, commune$INSEE_COM == "46042")
 ```
 
 
-Pour utiliser la fonction `crop()`, les deux couches de données doivent être dans la même projection. 
+Pour utiliser la fonction `crop()`, les deux couches de données doivent être dans le même système de coordonnées. 
 ```{r crop_raster_3}
 crop_cahors <- crop(elev, cahors)
 

@@ -23,6 +23,8 @@ format:
       avec un SIG. Les principales étapes du traitement de l’information géographiques y sont abordées."
     bibliography: [book.bib]
     lang: fr
+    language: 
+      title-block-author-plural: "Auteurs"
     csl: "universite-de-montreal-apa.csl"
 
 book:
@@ -30,16 +32,17 @@ book:
   description: "Pour la réalisation de traitements reproductibles de l'information géographique."
   author:
     - name: Timothée Giraud
-      orcid: 0000-0001-5679-6536
+      orcid: 0000-0002-1932-3323
       url: https://rcarto.github.io
       affiliation:
           name: Centre pour l’analyse spatiale et la géovisualisation - RIATE (CNRS)
           url: https://riate.cnrs.fr
     - name: Hugues Pecout
       orcid: 0000-0002-0246-0954
+      url: https://geographie-cites.cnrs.fr/membres/hugues-pecout
       affiliation:
           name: Géographie-cités (CNRS)
-          url: https://geographie-cites.cnrs.fr/       
+          url: https://geographie-cites.cnrs.fr  
   date: today
   date-format: "D MMM YYYY"
   doi: 10.5281/zenodo.17987558
@@ -104,4 +107,3 @@ knitr:
     crop: true
     fig.path: "figs/"
     cache.path: "cache/"
-

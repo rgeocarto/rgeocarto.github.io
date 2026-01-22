@@ -106,7 +106,7 @@ com_u <- com |>
 
 ## Construire une zone tampon
 
-La fonction `st_buffer()` permet de construire des zones tampons. La distance est exprimée en unité de la projection utilisée (`st_crs(x)$units`).  
+La fonction `st_buffer()` permet de construire des zones tampons. La distance est exprimée en unité du système de coordonnées utilisée (`st_crs(x)$units`).  
 
 ```{r buffers}
 gramat <- com[com$NOM_COM == "Gramat", ]
