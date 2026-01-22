@@ -293,14 +293,14 @@ mf_title("CORINE Land Cover - 2018")
 
 ### Cartes continues 
 
-Ici nous allons utiliser les raster des altitudes. 
+Ici nous allons utiliser le raster des altitudes. 
 
 ```{r raster_cont}
 #| fig-width: 6
 #| fig-height: 5
-elev <- rast("data/elevation.tif") 
+elevation <- rast("data/elevation.tif") 
 mf_raster(
-  elev, 
+  elevation, 
   type = "continuous", 
   pal = "Rocket", rev = TRUE,
   leg_val_rnd = 0,
@@ -315,7 +315,7 @@ Les classes dont calculées en utilisant les méthodes proposées par `mf_get_br
 #| fig-width: 6
 #| fig-height: 5
 mf_raster(
-  elev,
+  elevation,
   type = "interval",
   breaks = "q6", pal = "Turku", rev = TRUE,
   leg_val_rnd = 0,
