@@ -627,7 +627,7 @@ div.csl-indent {
 </section>
 <section id="construire-une-zone-tampon" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="construire-une-zone-tampon"><span class="header-section-number">7.4</span> Construire une zone tampon</h2>
-<p>La fonction <code>st_buffer()</code> permet de construire des zones tampons. La distance est exprimée en unité de la projection utilisée (<code>st_crs(x)$units</code>).</p>
+<p>La fonction <code>st_buffer()</code> permet de construire des zones tampons. La distance est exprimée en unité du système de coordonnées utilisée (<code>st_crs(x)$units</code>).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>gramat <span class="ot">&lt;-</span> com[com<span class="sc">$</span>NOM_COM <span class="sc">==</span> <span class="st">"Gramat"</span>, ]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>

@@ -460,7 +460,7 @@ div.csl-indent {
 
 <section id="sec-proj" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="sec-proj"><span class="header-section-number">12.1</span> Projections</h2>
-<p>Pour modifier le système de projection d’un raster, nous pouvons utiliser la fonction <code>project()</code>. Il est alors nécessaire de <strong>fournir un modèle</strong> et d’indiquer la <strong>méthode d’estimation</strong> des nouvelles valeurs des cellules.</p>
+<p>Pour modifier le système de coordonnées d’un raster, nous pouvons utiliser la fonction <code>project()</code>. Il est alors nécessaire de <strong>fournir un modèle</strong> et d’indiquer la <strong>méthode d’estimation</strong> des nouvelles valeurs des cellules.</p>
 <p>Le modèle est un nouveau raster sur lequel aligner/projeter les données. Pour construire un modèle, nous utilisons dans un premier temps la fonction <code>project(x, crs)</code>. Cette fonction va produire un raster avec une résolution choisie automatiquement. Nous utilisons ensuite la fonction <code>res()</code> (ou <code>dim()</code>) pour ajuster la résolution de ce raster modèle (voir <code>?project</code>). La fonction <code>project()</code> peut ensuite être réutilisée pour projeter les valeurs dans le modèle, en précisant la méthode d’estimation à utiliser.</p>
 <p>Quatre méthodes d’estimation sont disponibles :</p>
 <ul>
@@ -474,7 +474,7 @@ div.csl-indent {
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>#&gt; terra 1.8.86</code></pre>
+<pre><code>#&gt; terra 1.8.93</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>elev_raw <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/elevation.tif"</span>) </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>clc_raw <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data/clc_2018.tif"</span>)</span>
@@ -533,7 +533,7 @@ div.csl-indent {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cahors <span class="ot">&lt;-</span> <span class="fu">subset</span>(commune, commune<span class="sc">$</span>INSEE_COM <span class="sc">==</span> <span class="st">"46042"</span>) </span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Pour utiliser la fonction <code>crop()</code>, les deux couches de données doivent être dans la même projection.</p>
+<p>Pour utiliser la fonction <code>crop()</code>, les deux couches de données doivent être dans le même système de coordonnées.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>crop_cahors <span class="ot">&lt;-</span> <span class="fu">crop</span>(elev, cahors)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>

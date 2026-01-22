@@ -455,7 +455,7 @@ div.csl-indent {
 <section id="créer-une-matrice-de-distances" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="créer-une-matrice-de-distances"><span class="header-section-number">8.1</span> Créer une matrice de distances</h2>
 <p>La fonction <code>st_distance()</code> permet de calculer une matrice de distance entre deux couches de points.<br>
-Si le système de projection du jeu de données est renseigné, les distances sont exprimées dans l’unité de mesure de la projection (le plus souvent en mètres).</p>
+Si le système de coordonnées du jeu de données est renseigné, les distances sont exprimées dans son unité de mesure (le plus souvent en mètres).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>com <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/lot.gpkg"</span>, <span class="at">layer =</span> <span class="st">"communes"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>, <span class="at">agr =</span> <span class="st">"constant"</span>)</span>
