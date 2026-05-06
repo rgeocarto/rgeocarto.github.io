@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Géomatique et cartographie avec R</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -92,15 +95,14 @@ div.csl-indent {
 <link href="./img/layer-group-solid.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4b0b6a96e4961716c4ecb84507302723.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-feb11123fa3c2eecb56c25a67ed392d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -460,9 +462,12 @@ div.csl-indent {
 <p>Les objets <code>sf</code> <strong>sont</strong> des <code>data.frame</code>.<br>
 Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>com <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/lot.gpkg"</span>, <span class="at">layer =</span> <span class="st">"communes"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(com, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Linking to GEOS 3.13.1, GDAL 3.10.3, PROJ 9.6.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>com <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/lot.gpkg"</span>, <span class="at">layer =</span> <span class="st">"communes"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(com, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; Simple feature collection with 3 features and 12 fields
 #&gt; Geometry type: MULTIPOLYGON
@@ -478,15 +483,15 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 #&gt; 2 0.000000  4.794521     0  4.794521  9.589041 MULTIPOLYGON (((605540.7 64...
 #&gt; 3 5.209841 10.419682     0 57.308249 78.147612 MULTIPOLYGON (((593707.7 64...</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(com)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(com)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;   INSEE_COM           NOM_COM             STATUT            POPULATION     
-#&gt;  Length:313         Length:313         Length:313         Min.   :   49.0  
-#&gt;  Class :character   Class :character   Class :character   1st Qu.:  172.0  
-#&gt;  Mode  :character   Mode  :character   Mode  :character   Median :  300.0  
-#&gt;                                                           Mean   :  555.7  
-#&gt;                                                           3rd Qu.:  529.0  
-#&gt;                                                           Max.   :19907.0  
+<pre><code>#&gt;      INSEE_COM        NOM_COM          STATUT      POPULATION     
+#&gt;  Length   :313   Length   :313   Length   :313   Min.   :   49.0  
+#&gt;  N.unique :313   N.unique :313   N.unique :  3   1st Qu.:  172.0  
+#&gt;  N.blank  :  0   N.blank  :  0   N.blank  :  0   Median :  300.0  
+#&gt;  Min.nchar:  5   Min.nchar:  3   Min.nchar: 10   Mean   :  555.7  
+#&gt;  Max.nchar:  5   Max.nchar: 35   Max.nchar: 15   3rd Qu.:  529.0  
+#&gt;                                                  Max.   :19907.0  
 #&gt;      AGR_H            AGR_F            IND_H             IND_F        
 #&gt;  Min.   : 0.000   Min.   : 0.000   Min.   :  0.000   Min.   :  0.000  
 #&gt;  1st Qu.: 0.000   1st Qu.: 0.000   1st Qu.:  4.843   1st Qu.:  0.000  
@@ -522,13 +527,13 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 <div class="callout-body-container callout-body">
 <p>Pour transformer un objet <code>sf</code> en simple <code>data.frame</code> (sans géométries), nous pouvons utiliser les fonctions <code>st_set_geometry()</code> ou <code>st_drop_geometry()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>com_df1 <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(com, <span class="cn">NULL</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>com_df2 <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(com)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(com_df1, com_df2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>com_df1 <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(com, <span class="cn">NULL</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>com_df2 <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(com)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(com_df1, com_df2)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(com_df1, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(com_df1, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   INSEE_COM  NOM_COM         STATUT POPULATION     AGR_H    AGR_F     IND_H
 #&gt; 1     46001    Albas Commune simple        522  4.978581 0.000000  4.936153
@@ -547,7 +552,7 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 <h2 data-number="3.2" class="anchored" data-anchor-id="affichage"><span class="header-section-number">3.2</span> Affichage</h2>
 <p>Aperçu des variables avec <code>plot()</code> :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(com)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(com)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Warning: plotting the first 9 out of 12 attributes; use max.plot = 12 to plot
 #&gt; all</code></pre>
@@ -562,7 +567,7 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 </div>
 <p>Affichage d’une seule variable :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(com[<span class="st">"POPULATION"</span>])</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(com[<span class="st">"POPULATION"</span>])</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -573,7 +578,7 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 </div>
 <p>Affichage de la géométrie seule :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(com), <span class="at">col =</span> <span class="st">"ivory4"</span>, <span class="at">border =</span> <span class="st">"ivory"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(com), <span class="at">col =</span> <span class="st">"ivory4"</span>, <span class="at">border =</span> <span class="st">"ivory"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -584,8 +589,8 @@ Nous pouvons utiliser les fonctions <code>head()</code> ou <code>summary()</code
 </div>
 <p>Il est aussi possible d’utiliser le package <code>mapsf</code> <span class="citation" data-cites="R-mapsf">(<a href="2000_references.html#ref-R-mapsf" role="doc-biblioref">Giraud, 2025</a>)</span> pour afficher les objets <code>sf</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(com, <span class="at">col =</span> <span class="st">"ivory4"</span>, <span class="at">border =</span> <span class="st">"ivory"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(com, <span class="at">col =</span> <span class="st">"ivory4"</span>, <span class="at">border =</span> <span class="st">"ivory"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

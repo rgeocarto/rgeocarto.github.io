@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Géomatique et cartographie avec R</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -92,15 +95,14 @@ div.csl-indent {
 <link href="./img/layer-group-solid.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4b0b6a96e4961716c4ecb84507302723.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-feb11123fa3c2eecb56c25a67ed392d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -428,7 +430,6 @@ div.csl-indent {
    
   <ul>
   <li><a href="#fonds-de-cartes-raster" id="toc-fonds-de-cartes-raster" class="nav-link active" data-scroll-target="#fonds-de-cartes-raster"><span class="header-section-number">21.0.1</span> Fonds de cartes raster</a></li>
-  <li><a href="#fonds-de-cartes-vectoriels" id="toc-fonds-de-cartes-vectoriels" class="nav-link" data-scroll-target="#fonds-de-cartes-vectoriels"><span class="header-section-number">21.0.2</span> Fonds de cartes vectoriels</a></li>
   </ul>
 </nav>
     </div>
@@ -457,7 +458,7 @@ div.csl-indent {
 <section id="fonds-de-cartes-raster" class="level3" data-number="21.0.1">
 <h3 data-number="21.0.1" class="anchored" data-anchor-id="fonds-de-cartes-raster"><span class="header-section-number">21.0.1</span> Fonds de cartes raster</h3>
 <p><img src="img/logo_maptiles.png" align="right" width="150"></p>
-<p>Le package <code>maptiles</code> <span class="citation" data-cites="R-maptiles">(<a href="2000_references.html#ref-R-maptiles" role="doc-biblioref">Giraud, 2025b</a>)</span> permet de télécharger et d’afficher des fonds de cartes raster. La fonction <code>get_tiles()</code> permet de télécharger des fonds de cartes OSM au format <code>SpatRaster</code> du package <code>terra</code>.<br>
+<p>Le package <code>maptiles</code> <span class="citation" data-cites="R-maptiles">(<a href="2000_references.html#ref-R-maptiles" role="doc-biblioref">Giraud, 2025</a>)</span> permet de télécharger et d’afficher des fonds de cartes raster. La fonction <code>get_tiles()</code> permet de télécharger des fonds de cartes OSM au format <code>SpatRaster</code> du package <code>terra</code>.<br>
 Dans cette exemple nous utilisons le package <code>mapsf</code> pour afficher la carte.<br>
 Les rendus sont meilleurs si les données en entrée utilisent le même système de coordonnées que les tuiles (<a href="https://github.com/riatelab/maptiles#projection">EPSG:3857</a>).</p>
 <div class="cell">
@@ -511,75 +512,46 @@ Les rendus sont meilleurs si les données en entrée utilisent le même système
 </div>
 </div>
 </div>
-</section>
-<section id="fonds-de-cartes-vectoriels" class="level3" data-number="21.0.2">
-<h3 data-number="21.0.2" class="anchored" data-anchor-id="fonds-de-cartes-vectoriels"><span class="header-section-number">21.0.2</span> Fonds de cartes vectoriels</h3>
-<p><img src="img/logo_maposm.png" align="right" width="150"></p>
-<p>La base de données OpenStreetMap propose de nombreuses couches géographiques très détaillées à l’échelle mondiale. Pour obtenir des informations synthétiques pouvant être utilisées à des fins cartographiques, les couches doivent être sélectionnées, simplifiées, fusionnées ou modifiées. Le package <code>maposm</code> <span class="citation" data-cites="R-maposm">(<a href="2000_references.html#ref-R-maposm" role="doc-biblioref">Giraud, 2025a</a>)</span> fournit un ensemble de couches composites construites à partir d’extractions effectuées avec le package <a href="18_OSM_data.html#osmdata"><code>osmdata</code></a>.</p>
-<p>Les couches proposées sont les suivantes :</p>
-<ul>
-<li>les zones urbaines</li>
-<li>les bâtiments</li>
-<li>les espaces verts</li>
-<li>les routes principales</li>
-<li>les routes secondaires</li>
-<li>les voies ferrées</li>
-<li>les étendues d’eau</li>
-</ul>
-<p>Le package n’est pas sur le CRAN. Pour l’installer :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"maposm"</span>, <span class="at">repos =</span> <span class="st">"https://riatelab.r-universe.dev"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><code>om_get()</code> est utilisé pour télécharger, fusionner et simplifier les couches géographiques. <code>om_map()</code> peut être utilisé pour cartographier les couches.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maposm)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> com_raw[com_raw<span class="sc">$</span>NOM_COM <span class="sc">==</span> <span class="st">"Cahors"</span>, ] <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_geometry</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_centroid</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="st">"EPSG:4326"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_coordinates</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>cahors <span class="ot">&lt;-</span> <span class="fu">om_get</span>(<span class="at">x =</span> coords, <span class="at">r =</span> <span class="dv">2000</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Getting urban areas: 5.231 sec elapsed
-#&gt; Getting buildings: 9.222 sec elapsed
-#&gt; Getting green areas: 3.243 sec elapsed
-#&gt; Getting roads: 1.744 sec elapsed
-#&gt; Getting streets: 2.454 sec elapsed
-#&gt; Getting railways: 1.047 sec elapsed
-#&gt; Getting water bodies: 5.012 sec elapsed</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">om_map</span>(<span class="at">x =</span> cahors, <span class="at">title =</span> <span class="st">"Cahors"</span>, <span class="at">theme =</span> <span class="st">"light"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="figs/display_maposm-1.png" class="img-fluid figure-img" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Site web de <code>maposm</code>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://github.com/riatelab/maposm/">Get Map Layers from OpenStreetMap</a></p>
-</div>
-</div>
+<!-- ### Fonds de cartes vectoriels -->
+<!-- <img src="img/logo_maposm.png" align="right" width="150"/> -->
+<!-- La base de données OpenStreetMap propose de nombreuses couches géographiques très détaillées à l'échelle mondiale. Pour obtenir des informations synthétiques pouvant être utilisées à des fins cartographiques, les couches doivent être sélectionnées, simplifiées, fusionnées ou modifiées. -->
+<!-- Le package `maposm` [@R-maposm] fournit un ensemble de couches composites construites à partir d'extractions effectuées avec le package [`osmdata`](#osmdata). -->
+<!-- Les couches proposées sont les suivantes : -->
+<!--   - les zones urbaines -->
+<!--   - les bâtiments -->
+<!--   - les espaces verts -->
+<!--   - les routes principales -->
+<!--   - les routes secondaires -->
+<!--   - les voies ferrées -->
+<!--   - les étendues d'eau -->
+<!-- Le package n'est pas sur le CRAN. Pour l'installer : -->
+<!-- ```{r install_maposm} -->
+<!-- #| eval: false -->
+<!-- install.packages("maposm", repos = "https://riatelab.r-universe.dev") -->
+<!-- ``` -->
+<!-- `om_get()` est utilisé pour télécharger, fusionner et simplifier les couches géographiques. -->
+<!-- `om_map()` peut être utilisé pour cartographier les couches. -->
+<!-- ```{r display_maposm} -->
+<!-- #| message: false -->
+<!-- library(maposm) -->
+<!-- coords <- com_raw[com_raw$NOM_COM == "Cahors", ] |> -->
+<!--   st_geometry() |> -->
+<!--   st_centroid() |> -->
+<!--   st_transform("EPSG:4326") |> -->
+<!--   st_coordinates() |> -->
+<!--   as.vector() -->
+<!-- cahors <- om_get(x = coords, r = 2000) -->
+<!-- om_map(x = cahors, title = "Cahors", theme = "light") -->
+<!-- ``` -->
+<!-- :::{.callout-note} -->
+<!-- ## Site web de `maposm` -->
+<!-- [Get Map Layers from OpenStreetMap](https://github.com/riatelab/maposm/) -->
+<!-- ::: -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-R-maposm" class="csl-entry" role="listitem">
-Giraud, T. (2025a). <em><span>maposm: Get Map Layers from OpenStreetMap</span></em> (version 0.2.0). <a href="https://github.com/riatelab/maposm">https://github.com/riatelab/maposm</a>
-</div>
 <div id="ref-R-maptiles" class="csl-entry" role="listitem">
-Giraud, T. (2025b). <em>maptiles: Download and Display Map Tiles</em>. <a href="https://doi.org/10.32614/CRAN.package.maptiles">https://doi.org/10.32614/CRAN.package.maptiles</a>
+Giraud, T. (2025). <em>maptiles: Download and Display Map Tiles</em>. <a href="https://doi.org/10.32614/CRAN.package.maptiles">https://doi.org/10.32614/CRAN.package.maptiles</a>
 </div>
 </div>
 </section>
