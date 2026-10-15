@@ -48,6 +48,8 @@ De nombreux packages de mise à disposition de données géographiques (géomét
   - {{< fa globe >}} `insee` : pour télécharger facilement les données de la base BDM ([Banque de Données Macroéconomiques](https://www.data.gouv.fr/fr/reuses/insee-package-r/)) de l'INSEE.
 - **Pologne**
   - {{< fa globe >}} `rgugik` : permet l'acquisition automatique de données ouvertes à partir des ressources du Bureau central polonais de la géodésie et de la cartographie ([Główny Urząd Geodezji i Kartografii](https://www.gov.pl/web/gugik)).  
+- **Sénégal**
+  - {{< fa globe >}} `mapSenegal` : accès à des fonds de carte du découpage administratif du Sénégal.  
 - ...
 
 

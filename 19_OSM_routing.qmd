@@ -34,10 +34,10 @@ puybrun <- st_centroid(com[com$INSEE_COM == "46229", ])
 # Avec OSRM
 route1 <- osrmRoute(src = cahors, dst = puybrun, overview = "full")
 # Avec Valhalla
-route2 <- vl_route(src = cahors, dst = puybrun)
+route2 <- vl_route(src = cahors, dst = puybrun, server = "https://valhalla1.openstreetmap.de/")
 
 # Visualisation des routes 
-mapview(route1, color = "lightblue4" ) + mapview(route2, color = "red4")
+mapview(route1, map.types = "OpenStreetMap", color = "darkblue" ) + mapview(route2, color = "red4")
 ```
 
 
@@ -77,11 +77,11 @@ row.names(places) <- c("Rue Montaudié", "Rue Albert Camus")
 # restaurants de Cahors
 # Avec OSRM
 mat1 <- osrmTable(src = places[c(3, 2)],
-                  dst = restaurant_cahors,
+                  dst = restaurant_cahors[1:50, ],
                   osrm.profile = "foot")
 # Avec Valhalla
 mat2 <- vl_matrix(src = places[c(3, 2)],
-                  dst = restaurant_cahors,
+                  dst = restaurant_cahors[1:50, ],
                   costing = "pedestrian")
 mat <- cbind(t(mat1$durations), t(mat2$durations))
 

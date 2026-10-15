@@ -47,7 +47,7 @@ m
 #| cache: false
 #| fig-format: png
 library(mapview)
-mapview(cahors) + mapview(restaurant_cahors)
+mapview(cahors, map.types = "OpenStreetMap") + mapview(restaurant_cahors)
 ```
 
 

@@ -80,10 +80,7 @@ mf_map(
   type = "choro",
   breaks = "quantile",
   nbreaks = 6,
-  pal = "Dark Mint",
-  lwd = 1,
   leg_title = "Densité de population\n(habitants par km2)", 
-  leg_val_rnd = 0
 )
 mf_title("Distribution de la population dans le Lot (2018)")
 ```
@@ -139,7 +136,7 @@ par(opar)
 Avant de réaliser une carte choroplèthe on doit d'abord étudier la distribution statistique de la variable que l'on souhaite cartographier. 
 La fonction `mf_distr()` permet de visualiser les distributions. 
 
-```{r discr2}
+```{r discr1}
 #| fig-width: 7
 #| fig-height: 5
 mf_distr(com$DENS)
@@ -148,18 +145,29 @@ Cette distribution est très dissymétrique à gauche.
 
 La fonction `mf_get_breaks()` met à disposition les méthodes de discrétisations de variables classique : quantiles, moyenne/écart-type, amplitudes égales, moyennes emboîtées, Fisher-Jenks, géométrique...
 
-Ici, l'utilisation de la méthode "geom" est assez appropriée.
+Ici, l'utilisation de la méthode "geom" est assez appropriée. 
 
-```{r discr3}
-#| fig-height: 6
+```{r discr2}
 bks <- mf_get_breaks(x = com$DENS, nbreaks = 5, breaks = "geom") 
 bks
+```
+
+Nous pouvons visualiser cette discrétisation sur le graphique. 
+```{r discr3}
+#| fig-width: 7
+#| fig-height: 5
+mf_distr(com$DENS, breaks = bks, yaxt = FALSE, 
+         main = "Discrétisation de la densité de population")
+```
+
+Nous pouvons ensuite utiliser le vecteur avec bornes de classes directement dans `mf_map()`.
+
+```{r discr4}
+#| fig-height: 6
 mf_map(
   x = com, var = "DENS", type = "choro",
   breaks = bks, pal = "Blues",
-  lwd = 1,
-  leg_title = "Population density\n(inh. per km2)", 
-  leg_val_rnd = 0
+  leg_title = "Population density\n(inh. per km2)"
 )
 mf_title("Distribution de la population dans le Lot (2018)")
 ```
@@ -177,7 +185,6 @@ mf_map(
   var="STATUT",
   type = "typo",
   pal = c("aquamarine4", "yellow3","wheat"),
-  lwd = .7,
   leg_title = ""
 )
 mf_title("Statut administratif des communes")
@@ -193,7 +200,6 @@ mf_map(
   type = "typo",
   pal = c("aquamarine4", "yellow3","wheat"),
   val_order = c("Préfecture", "Sous-préfecture", "Commune simple"),
-  lwd = .7,
   leg_title = ""
 )
 mf_title("Statut administratif des communes")
@@ -205,15 +211,16 @@ mf_title("Statut administratif des communes")
 La fonction `mf_map(..., var = c("var1", "var2"), type = "prop_choro")` représente des symboles proportionnels dont les surfaces sont proportionnelles aux valeurs d'une variable et dont la couleur repose sur la discrétisation d'une seconde variable. La fonction utilise les arguments des fonctions `mf_map(..., type = "prop")` et `mf_map(..., type = "choro")`.
 
 ```{r choroprop}
-mf_map(x = com)
+mf_map(x = com, lwd = .2)
 mf_map(
   x = com,
   var = c("POPULATION", "DENS"),
   type = "prop_choro",
-  border = "grey90",
   leg_title = c("Population", "Densité\nde population\n(en hab./km2)"),
-  breaks = "q6",
-  pal = "Magenta",
+  breaks = "geom",
+  nbreaks = 5,
+  border = "grey10",
+  pal = "Teal",
   leg_val_rnd = c(0,1))
 mf_title("Distribution de la population dans le Lot (2018)")
 ```
@@ -222,12 +229,13 @@ mf_title("Distribution de la population dans le Lot (2018)")
 La fonction `mf_map(..., var = c("var1", "var2"), type = "prop_typo")` représente des symboles proportionnels dont les surfaces sont proportionnelles aux valeurs d'une variable et dont la couleur représente les modalités d'une variable qualitative. La fonction utilise les arguments des fonctions `mf_map(..., type = "prop")` et `mf_map(..., type = "typo")`.
 
 ```{r typoprop}
-mf_map(x = com)
+mf_map(x = com, lwd = .2)
 mf_map(
   x = com,
   var = c("POPULATION", "STATUT"),
   type = "prop_typo",
-  pal = c("coral4", "chocolate","darksalmon"),
+  pal =  c("aquamarine4", "yellow3","wheat"),
+  border = "grey10",
   val_order = c("Préfecture", "Sous-préfecture", "Commune simple"),
   leg_pos = "topleft",
   leg_title = c("Population\n(2015)",

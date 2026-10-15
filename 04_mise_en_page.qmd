@@ -201,11 +201,14 @@ mf_frame(lty = 2)
 # Sélection d'une commune
 cahors <- com[com$NOM_COM == "Cahors", ]
 mf_map(com)
-mf_annotation(
+mf_text(
   x = cahors, 
-  txt = "Cahors", 
+  txt = "Cahors",
+  line = 3,
+  offset = 10,
+  pos = "topright",
   halo = TRUE, 
-  cex = 1.5
+  cex = 1.2
 )
 ```
 

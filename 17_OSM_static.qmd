@@ -34,22 +34,9 @@ De nombreux styles de tuiles sont disponibles avec le package. En voici quelque 
 
 ![](img/maptiles_bg.png)
 
-Certains styles ne contiennent que des labels et peuvent être utilisés en complément de données vectorielles:
-
-```{r osm_lab}
-#| fig-width: 4.67
-#| fig-height: 4.51
-# Récupération d'un fond de carte OSM des labels
-mf_theme(mar = c(0,0,0,0))
-osm_labels <- get_tiles(x = com, provider = "CartoDB.PositronOnlyLabels")
-mf_map(com, col = 'ivory', border = 'ivory3')
-mf_raster(osm_labels, add = T)
-mf_credits(get_credit("CartoDB.PositronOnlyLabels"), bg = "#ffffff80")
-```
-
 
 :::{.callout-note}
-Pour certains styles, ceux fournis par Stadia ou Thunderforest par exemple, vous aurez besoin d'une clef d'API. Vous devez vous inscrire sur le site Web de ces fournisseurs pour obtenir une clef. 
+Pour certains styles, ceux fournis par CARTO, Stadia ou Thunderforest par exemple, vous aurez besoin d'une clef d'API. Vous devez vous inscrire sur le site Web de ces fournisseurs pour obtenir une clef. 
 :::
 
 
@@ -57,9 +44,9 @@ Pour certains styles, ceux fournis par Stadia ou Thunderforest par exemple, vous
 <img src="img/logo_maposm.png" align="right" width="150"/>
 
 La base de données OpenStreetMap propose de nombreuses couches géographiques très détaillées à l'échelle mondiale. Pour obtenir des informations synthétiques pouvant être utilisées à des fins cartographiques, les couches doivent être sélectionnées, simplifiées, fusionnées ou modifiées.
-Le package `maposm` [@R-maposm] fournit un ensemble de couches composites construites à partir d'extractions effectuées avec le package [`osmdata`](#osmdata).
+Le package `maposm` [@R-maposm] fournit un ensemble de couches composites construites à partir d'extractions effectuées avec le package [`osmextract`](#osmextract).
 
-Les couches proposées sont les suivantes :  
+Les couches proposées sont les suivantes :
 
   - les zones urbaines
   - les bâtiments
@@ -69,17 +56,12 @@ Les couches proposées sont les suivantes :
   - les voies ferrées
   - les étendues d'eau
 
-Le package n'est pas sur le CRAN. Pour l'installer :
-```{r install_maposm}
-#| eval: false
-install.packages("maposm", repos = "https://riatelab.r-universe.dev")
-```
-
 `om_get()` est utilisé pour télécharger, fusionner et simplifier les couches géographiques.
 `om_map()` peut être utilisé pour cartographier les couches.
 
 ```{r display_maposm}
 #| message: false
+#| eval: false
 library(maposm)
 coords <- com_raw[com_raw$NOM_COM == "Cahors", ] |>
   st_geometry() |>
@@ -88,11 +70,21 @@ coords <- com_raw[com_raw$NOM_COM == "Cahors", ] |>
   st_coordinates() |>
   as.vector()
 
-cahors <- om_get(x = coords, r = 2000)
+cahors <- om_get(x = coords, r = 2000, quiet = TRUE)
+mf_theme("base")
 om_map(x = cahors, title = "Cahors", theme = "light")
 ```
 
+```{r display_maposm2}
+#| echo: false
+library(maposm)
+x <- om_read(filename = "data/cahors.gpkg")
+mf_theme("base")
+om_map(x = x, title = "Cahors", theme = "light")
+```
+
+
 :::{.callout-note}
 ## Site web de `maposm`
-[Get Map Layers from OpenStreetMap](https://github.com/riatelab/maposm/)
+[Get Map Layers from OpenStreetMap](https://codeberg.org/riatelab/maposm/)
 :::
